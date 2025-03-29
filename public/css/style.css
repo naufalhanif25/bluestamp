@@ -1,0 +1,58 @@
+/* Color palette */
+/* 
+    black: text, title
+    fade-black: text, paragraph
+    grey: text, paragraph
+    light-black: stroke, border
+    light-grey: frame, background
+    light-yellow: frame, background, border
+    red: like fill
+    light-red: stroke, border
+    white: background
+*/
+:root {
+    --black: #0D0907;
+    --fade-black: #3D3936;
+    --grey: #86827B;
+    --light-black: #CFCAC1;
+    --light-grey: #ECE7DD;
+    --light-yellow: #FEE0AA;
+    --red: #FF1600;
+    --light-red: #FF988E;
+    --white: #FFFAF0;
+}
+
+/* Dafault font color */
+* {
+    color: var(--black);
+}
+
+/* Default background color */
+body {
+    background-color: var(--white);
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lato regular */
+.lato {
+    font-family: "Lato", sans-serif;
+    font-weight: 400; 
+    font-style: normal;
+}
+
+/* Lato bold */
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700; 
+    font-style: normal;
+}
+
+/* Mynerve regular */
+.mynerve {
+    font-family: "Mynerve", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
