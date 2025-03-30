@@ -1,0 +1,98 @@
+/* Header style */
+header {
+    width: 100vw;
+    height: 3.2em;
+    padding: 0rem 1.6rem;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid var(--light-black);
+    background: var(--white);
+    box-shadow: 0em 0.4em 0.4em 0em var(--light-shadow);
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+    gap: 2rem
+}
+
+.head-title {
+    height: 100%;
+    width: 8rem;
+    gap: 1.8rem;
+}
+
+.head-title h1 {
+    cursor: pointer;
+}
+
+.acc-buttons {
+    height: 100%;
+    width: 8rem;
+    gap: 2rem;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--black-hover);
+}
+
+/* Main style */
+main {
+    min-height: 100vh;
+}
+
+/* Search bar section style */
+.search {
+    padding: 6rem 16rem 3.2rem 16rem;
+    box-sizing: border-box;
+}
+
+.search input {
+    width: auto;
+    padding: 0.4rem 1.2rem;
+    box-sizing: border-box;
+    border: 0.1em solid var(--light-black);
+    border-radius: 0.4em;
+    outline: none;
+}
+
+.search input::placeholder {
+    color: var(--grey);
+}
+
+.search button {
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.4rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.search button:hover {
+    background-color: var(--black-hover);
+}
+
+/* Results section style */
+.results {
+    padding: 0rem 8rem 2.4rem 8rem;
+    
+}
+
+/* Footer style */
+footer {
+    width: 100vw;
+    padding: 2.4rem 1.6rem;
+    box-sizing: border-box;
+    border-top: 0.1em solid var(--light-black);
+    background: var(--white);
+}
+
+footer p {
+    color: var(--grey);
+}

@@ -1,0 +1,71 @@
+/* Header style */
+header {
+    width: 100vw;
+    height: 3.2em;
+    padding: 0rem 1.6rem;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid var(--light-black);
+    background: var(--white);
+    box-shadow: 0em 0.4em 0.4em 0em var(--light-shadow);
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+    gap: 2rem
+}
+
+.head-title {
+    height: 100%;
+    width: 8rem;
+}
+
+.head-title h1 {
+    cursor: pointer;
+}
+
+.head-title svg {
+    fill: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.head-title svg path {
+    stroke: var(--fade-black);
+    stroke-width: 0.24rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.acc-buttons {
+    height: 100%;
+    width: 8rem;
+    gap: 2rem;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--black-hover);
+}
+
+/* Main style */
+main {
+    min-height: 100vh;
+}
+
+/* Footer style */
+footer {
+    width: 100vw;
+    padding: 2.4rem 1.6rem;
+    box-sizing: border-box;
+    border-top: 0.1em solid var(--light-black);
+    background: var(--white);
+}
+
+footer p {
+    color: var(--grey);
+}

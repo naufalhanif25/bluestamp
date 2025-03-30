@@ -12,14 +12,41 @@
 */
 :root {
     --black: #0D0907;
+    --black-hover: rgba(13, 9, 7, 0.88);
     --fade-black: #3D3936;
     --grey: #86827B;
     --light-black: #CFCAC1;
     --light-grey: #ECE7DD;
+    --fade-shadow: rgba(13, 9, 7, 0.08);
+    --light-shadow: rgba(13, 9, 7, 0.02);
     --light-yellow: #FEE0AA;
     --red: #FF1600;
     --light-red: #FF988E;
     --white: #FFFAF0;
+    --white-hover: rgba(13, 9, 7, 0.06);
+}
+
+/* Lato regular */
+.lato {
+    font-family: "Lato", sans-serif;
+    font-weight: 400; 
+    font-style: normal;
+    line-height: 1.4rem;
+}
+
+/* Lato bold */
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700; 
+    font-style: normal;
+    line-height: 1.6rem;
+}
+
+/* Mynerve regular */
+.mynerve {
+    font-family: "Mynerve", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Dafault font color */
@@ -30,29 +57,5 @@
 /* Default background color */
 body {
     background-color: var(--white);
-    width: 100vw;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Lato regular */
-.lato {
-    font-family: "Lato", sans-serif;
-    font-weight: 400; 
-    font-style: normal;
-}
-
-/* Lato bold */
-.lato-bold {
-    font-family: "Lato", sans-serif;
-    font-weight: 700; 
-    font-style: normal;
-}
-
-/* Mynerve regular */
-.mynerve {
-    font-family: "Mynerve", cursive;
-    font-weight: 400;
-    font-style: normal;
+    scroll-behavior: smooth;
 }
