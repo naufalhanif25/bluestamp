@@ -28,8 +28,33 @@
     </header>
 
     <!-- Main -->
-    <main>
-        
+    <main class="flex justify-center items-center min-h-[calc(100vh-180px)]">
+        <div class="bg-[#FFFBF6] rounded-3xl p-8 w-full max-w-md mx-4">
+          <h2 class="text-3xl font-mynerve text-center mb-6">About Bluestamp</h2>
+          
+          <p class="text-gray-600 text-center max-w-3xl mb-12">
+            Bluestamp is a platform that provides a place for teenagers to freely express their feelings and others can reply and provide support for it.
+          </p>
+          
+    
+          <h3 class="text-3xl font-mynerve text-center mt-6 mb-6">Support Bluestamp</h3>
+          
+          <p class="text-gray-600 text-center max-w-3xl mb-8">
+            Bluestamp will always be free to use! Therefore, if you'd like to support the development and server costs, you can voluntarily contribute to it through donation. Anything you give is greatly appreciated and can helps keep the platform running smoothly for everyone.
+          </p>
+    
+          <div class="space-y-4">
+            <button type="button" 
+                    class="w-full bg-black text-white py-3 rounded-lg font-medium">
+              Support Bluestamp (Saweria)
+            </button>
+            
+            <button type="button" 
+                    class="w-full bg-black text-white py-3 rounded-lg font-medium">
+              Support Bluestamp (Buy Me a Coffee)
+            </button>
+          </div>
+        </div>
     </main>
 
     <!-- Footer -->
