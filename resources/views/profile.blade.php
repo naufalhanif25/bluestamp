@@ -28,7 +28,7 @@
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="flex justify-center items-center min-h-[calc(100vh-180px)]">
         <div class="bg-[#FFFBF6] rounded-3xl shadow-lg p-8 w-full max-w-md mx-4">
           
           <!-- Profile Header -->
