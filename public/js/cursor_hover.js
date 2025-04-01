@@ -1,6 +1,13 @@
 const cursor = document.querySelector(".cursor");
 const comments = document.querySelectorAll(".comment");
 
+if (window.innerWidth <= 600) {
+    cursor.classList.add("cursor-animation-phone");
+}
+else if (window.innerWidth > 600) {
+    cursor.classList.add("cursor-animation");
+}
+
 // Function to check if the comment is being hovered
 function cursorHover() {
     const circle = cursor.getBoundingClientRect();
@@ -16,5 +23,17 @@ function cursorHover() {
         }
     });
 }
+
+// Reset animation state when window is resized
+window.addEventListener("resize", () => {
+    if (window.innerWidth <= 600) {
+        cursor.classList.toggle("cursor-animation");
+        cursor.classList.toggle("cursor-animation-phone");
+    }
+    else if (window.innerWidth > 600) {
+        cursor.classList.toggle("cursor-animation");
+        cursor.classList.toggle("cursor-animation-phone");
+    }
+});
 
 setInterval(cursorHover, 50);

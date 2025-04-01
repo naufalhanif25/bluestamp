@@ -38,10 +38,14 @@ header nav {
     stroke-linejoin: round;
 }
 
-.acc-buttons {
-    height: 100%;
-    width: 8rem;
-    gap: 2rem;
+@media (max-width: 600px) {
+    header {
+        padding: 0rem 1.2rem;
+    }
+
+    header nav {
+        gap: 12%;
+    }
 }
 
 .link {
@@ -49,12 +53,125 @@ header nav {
 }
 
 .link:hover {
-    color: var(--black-hover);
+    color: var(--fade-black-hover);
 }
 
 /* Main style */
 main {
     min-height: 100vh;
+}
+
+/* Signin box style */
+.signin-box {
+    background-color: var(--white);
+    border: 0.1em solid var(--light-black);
+    border-radius: 1.2em;
+    padding: 1.8rem 2.4rem 2.4rem 2.4rem;
+    box-sizing: border-box;
+    box-shadow: -0.6em 0.6em 0.8em 0em var(--fade-shadow);
+    gap: 2rem;
+    width: 24rem;
+}
+
+@media (max-width: 600px) {
+    .signin-box {
+        padding: 1.8rem 2rem 2.4rem 2rem;
+        width: 80%;
+    }
+}
+
+.input-form {
+    gap: 0.8rem;
+}
+
+.input-fields {
+    gap: 0.8rem;
+}
+
+.input-fields input {
+    padding: 0.4rem 1.2rem;
+    box-sizing: border-box;
+    border: 0.1em solid var(--light-black);
+    border-radius: 0.4em;
+    outline: none;
+}
+
+.input-fields input::placeholder {
+    color: var(--grey);
+}
+
+.password {
+    overflow: hidden;
+    padding: 0.4rem 1.2rem;
+    border: 0.1em solid var(--light-black);
+    border-radius: 0.4em;
+    gap: 0.8rem;
+}
+
+.password input {
+    padding: 0;
+    border: none;
+}
+
+.password svg {
+    fill: none;
+    stroke: var(--grey);
+    stroke-width: 0.12em;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    transition: 120ms ease-out;
+}
+
+.password svg:hover {
+    stroke: var(--grey-hover);
+}
+
+.buttons-container {
+    gap: 0.8rem;
+}
+
+.solid-button {
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.48rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.solid-button:hover {
+    background-color: var(--black-hover);
+}
+
+.outline-button {
+    color: var(--black);
+    outline: 0.1em solid var(--light-black);
+    outline-offset: -0.1em;
+    padding: 0.48rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.outline-button:hover {
+    background-color: var(--white-hover);
+}
+
+.outline-button svg {
+    fill: none;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.paragraph {
+    color: var(--fade-black);
 }
 
 /* Footer style */
@@ -64,6 +181,20 @@ footer {
     box-sizing: border-box;
     border-top: 0.1em solid var(--light-black);
     background: var(--white);
+}
+
+footer nav {
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 2.4rem 1.2rem;
+    }
+
+    footer nav {
+        gap: 12%;
+    }
 }
 
 footer p {

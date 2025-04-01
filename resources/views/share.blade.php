@@ -14,25 +14,47 @@
 <body class="flex flex-col m-0 overflow-x-hidden">
     <!-- Header -->
     <header class="flex fixed m-0 items-center justify-between self-stretch">
-        <div class="head-title flex items-center">
+        <svg id="menu" class="menu" viewBox="-0.5 -10 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="m12 5.217c-1.441 0-2.608-1.168-2.608-2.608s1.168-2.608 2.608-2.608c1.441 0 2.608 1.168 2.608 2.608s-1.168 2.608-2.608 2.608z"/>
+            <path d="m20.609 5.217c-1.441 0-2.608-1.168-2.608-2.608s1.168-2.608 2.608-2.608c1.441 0 2.608 1.168 2.608 2.608s-1.168 2.608-2.608 2.608z"/>
+            <path d="m2.609 5.217c-1.441 0-2.608-1.168-2.608-2.608s1.168-2.608 2.608-2.608c1.441 0 2.608 1.168 2.608 2.608s-1.168 2.608-2.608 2.608z"/>
+        </svg>
+        <div id="head-title" class="head-title items-center">
             <h1 onclick="window.location.href='{{ route('home') }}'" class="mynerve m-0 text-[16pt]">Bluestamp</h1>
         </div>
-        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt]">
+        <nav id="nav-buttons" class="flex-row items-center justify-center lato m-0 text-[10pt]">
             <a href="{{ route('home') }}" class="link">Home</a>
             <a href="{{ route('share') }}" class="link underline underline-offset-[0.24em] decoration-[0.08em]" style="text-decoration-color: var(--grey);">Share</a>
             <a href="{{ route('explore') }}" class="link">Explore</a>
         </nav>
-        <div class="acc-buttons flex items-center justify-right lato m-0 text-[10pt]">
+        <div class="acc-buttons flex items-center justify-end lato m-0 text-[10pt]">
             <a href="{{ route('signin') }}" class="link">Sign in</a>
             <a href="{{ route('signup') }}" class="link">Sign up</a>
         </div>
+        <!-- <div class="header-profile flex flex-row items-center justify-end">
+            <h1 class="lato m-0 text-[10pt]">John Doe</h1>
+            <svg onclick="window.location.href='{{ route('profile') }}'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.532 45.532">
+                <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> 
+            </svg>
+        </div> -->
     </header>
 
     <!-- Main -->
     <main>
+        <!-- Navigation bar section -->
+        <section id="navbar" class="navbar w-full flex flex-col items-center justify-center">
+            <span class="flex items-center justify-center">
+                <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt]">
+                    <a href="{{ route('home') }}" class="link">Home</a>
+                    <a href="{{ route('share') }}" class="link underline underline-offset-[0.24em] decoration-[0.08em]" style="text-decoration-color: var(--grey);">Share</a>
+                    <a href="{{ route('explore') }}" class="link">Explore</a>
+                </nav>
+            </span>
+        </section>
+
         <!-- Tools section -->
         <section class="tools w-full flex flex-row items-center justify-center">
-            <div class="flex flex-row, items-center jutsify-center">
+            <div class="flex flex-row items-center jutsify-center">
                 <button class="icon-button lato-bold text-[12pt] flex items-center justify-center">B</button>
                 <button class="icon-button lato text-[12pt] flex items-center justify-center">I</button>
                 <button class="icon-button lato text-[12pt] underline underline-offset-[0.12em] decoration-[0.08em] flex items-center justify-center">U</button>
@@ -49,9 +71,12 @@
                         <path d="M23.1 13.3334L21.7246 4.28286C21.4451 2.43755 19.4899 1.43756 17.9117 2.33222L17.1122 2.78555C16.1598 3.32673 15.0889 3.61067 14 3.61067C12.9112 3.61067 11.8403 3.32673 10.8878 2.78555L10.0883 2.33222C8.51012 1.4389 6.55492 2.43888 6.27542 4.28286L4.90002 13.3334" />
                     </svg>
                 </button>
-                <span class="pipe"></span>
-                <button class="share-button lato-bold text-[10pt]" type="submit">Share</button>
             </div>
+            <button class="share-button lato-bold text-[10pt] flex items-center justify-center" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -4 42 42">
+                    <path d="M32.1417 5.36938C32.2805 4.94056 32.1672 4.47017 31.8485 4.15147C31.5298 3.83278 31.0594 3.71953 30.6306 3.85827L4.63062 12.27C4.16048 12.4221 3.83165 12.8469 3.80214 13.3401C3.77263 13.8333 4.04849 14.2942 4.49713 14.5013L14.4383 19.0896C14.8297 19.2702 15.2879 19.227 15.6387 18.9765L20.4857 15.5143L17.0235 20.3613C16.773 20.7121 16.7298 21.1703 16.9104 21.5617L21.4987 31.5029C21.7058 31.9515 22.1667 32.2274 22.6599 32.1979C23.1531 32.1684 23.5779 31.8395 23.73 31.3694L32.1417 5.36938Z"/>
+                </svg>
+            </button>
         </section>
 
         <!-- Card section -->
@@ -64,7 +89,7 @@
                         </svg>
                         <h2 class="lato m-0 text-[10pt]">Anonymous</h2>
                     </div>
-                    <form class="w-full" action="" method="POST">
+                    <form class="flex grow items-center" action="" method="POST">
                         @csrf
                         <input id="tag" class="lato m-0 text-[10pt] text-right flex grow" type="text" name="tag" autocomplete="off" placeholder="#tag">
                     </form>
@@ -82,9 +107,9 @@
 
     <!-- Footer -->
     <footer class="flex flex-col items-center justify-center gap-[0.6rem] mt-[2rem]">
-        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt] gap-[2rem]">
+        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt]">
             <a href="{{ route('about') }}" class="link fade-text">About</a>
-            <a href="{{ route('home') }}" class="link fade-text">Feedback</a>
+            <a href="" class="link fade-text">Feedback</a>
             <a href="{{ route('about') }}" class="link fade-text">Support</a>
         </nav>
         <p class="lato m-0 text-[10pt]">© 2025 HearMeOut. All rights reserved.</p>
@@ -92,5 +117,6 @@
 
     <!-- Scripts -->
     <script src="js/card_color.js"></script>
+    <script src="js/open_nav.js"></script>
 </body>
 </html>

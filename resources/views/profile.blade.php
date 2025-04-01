@@ -15,12 +15,12 @@
     <!-- Header -->
     <header class="flex fixed m-0 items-center justify-between self-stretch">
         <div class="head-title flex items-center gap-[0.8rem]">
-            <svg onclick="window.history.back()" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg onclick="window.history.back()" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30 10 L15 25 L30 40"/>
-            </svg>
+            </svg> -->
             <h1 onclick="window.location.href='{{ route('home') }}'" class="mynerve m-0 text-[16pt]">Bluestamp</h1>
         </div>
-        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt]">
+        <nav class="flex flex-row items-center justify-end lato m-0 text-[10pt]">
             <a href="{{ route('home') }}" class="link">Home</a>
             <a href="{{ route('share') }}" class="link">Share</a>
             <a href="{{ route('explore') }}" class="link">Explore</a>
@@ -28,65 +28,58 @@
     </header>
 
     <!-- Main -->
-    <main class="flex justify-center items-center min-h-[calc(100vh-180px)]">
-        <div class="bg-[#FFFBF6] rounded-3xl shadow-lg p-8 w-full max-w-md mx-4">
-          
-          <!-- Profile Header -->
-          <div class="flex items-center gap-4 bg-gray-50 rounded-lg p-4 mb-8 border">
-            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-              </svg>
+    <main class="flex justify-center items-center">
+        <!-- Profile box -->
+        <section class="container flex flex-col items-center justify-center">
+            <!-- Informations (short) -->
+            <div class="profile-container w-full flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.532 45.532">
+                    <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> 
+                </svg>
+                <div class="about-short flex flex-col grow">
+                    <h1 class="mynerve m-0 text-[16pt]">John Doe</h1>
+                    <p class="lato m-0 text-[10pt]">john.doe12@gmail.com</p>
+                </div>
             </div>
-            <div>
-              <h2 class="font-medium">John Doe</h2>
-              <p class="text-sm text-gray-500">john.doe12@gmail.com</p>
-            </div>
-          </div>
-          
-          <!-- Profile Fields -->
-          <div class="space-y-4">
-            <div class="flex justify-between items-center border-b border-gray-300 pb-2">
-              <span class="text-sm text-gray-600">Full name</span>
-              <span class="text-gray-900">John Doe</span>
-            </div>
-    
-            <div class="flex justify-between items-center border-b border-gray-300 pb-2">
-              <span class="text-sm text-gray-600">Username</span>
-              <span class="text-gray-900">john_doe12</span>
-            </div>
-    
-            <div class="flex justify-between items-center border-b border-gray-300 pb-2">
-              <span class="text-sm text-gray-600">Email</span>
-              <span class="text-gray-900">john.doe12@gmail.com</span>
-            </div>
-    
-            <div class="flex justify-between items-center border-b border-gray-300 pb-2">
-              <span class="text-sm text-gray-600">Password</span>
-              <span class="text-gray-900">********</span>
-            </div>
-          </div>
-    
-          <!-- Action Buttons -->
-          <div class="space-y-4">
-            <div class="flex gap-4 mt-6">
-              <button type="button" class="w-full bg-black text-white py-3 rounded-lg font-medium">Edit</button>
-              <button type="button" class="w-full bg-black text-white py-3 rounded-lg font-medium">Share</button>
+
+            <!-- Informations (long) -->
+            <div class="about-long w-full flex flex-col items-center justify-center">
+                <div class="info-line flex justify-between items-center w-full">
+                    <span class="lato m-0 text-[10pt]">Full name</span>
+                    <span class="lato m-0 text-[10pt]">John Doe</span>
+                </div>
+                <div class="info-line flex justify-between items-center w-full">
+                    <span class="lato m-0 text-[10pt]">Username</span>
+                    <span class="lato m-0 text-[10pt]">john_doe12</span>
+                </div>
+                <div class="info-line flex justify-between items-center w-full">
+                    <span class="lato m-0 text-[10pt]">Email</span>
+                    <span class="lato m-0 text-[10pt]">john.doe12@gmail.com</span>
+                </div>
+                <div class="info-line flex justify-between items-center w-full">
+                    <span class="lato m-0 text-[10pt]">Password</span>
+                    <span class="lato m-0 text-[10pt]">*********</span>
+                </div>
             </div>
     
-            <button type="button" onclick="window.location.href='./index.html'" 
-              class="w-full text-[#FF1600] border border-[#FF988E] py-3 rounded-lg font-medium">
-              Sign out
-            </button>
-          </div> 
-        </div>
+            <!-- Action Buttons -->
+            <div class="buttons-container w-full flex flex-col items-center justify-center">
+                <div class="w-full flex flex-row items-center justify-center">
+                    <button type="button" class="solid-button grow lato-bold m-0 text-[10pt]">Edit</button>
+                    <button type="button" class="solid-button grow lato-bold m-0 text-[10pt]">Share</button>
+                </div>
+                <button onclick="window.location.href='{{ route('home') }}'" class="outline-button w-full lato-bold m-0 text-[10pt]">
+                    Sign out
+                </button>
+            </div> 
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="flex flex-col items-center justify-center gap-[0.6rem] mt-[2rem]">
-        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt] gap-[2rem]">
+        <nav class="flex flex-row items-center justify-center lato m-0 text-[10pt]">
             <a href="{{ route('about') }}" class="link fade-text">About</a>
-            <a href="{{ route('home') }}" class="link fade-text">Feedback</a>
+            <a href="" class="link fade-text">Feedback</a>
             <a href="{{ route('about') }}" class="link fade-text">Support</a>
         </nav>
         <p class="lato m-0 text-[10pt]">© 2025 HearMeOut. All rights reserved.</p>
