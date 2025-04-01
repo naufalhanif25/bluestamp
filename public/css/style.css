@@ -13,8 +13,8 @@
 :root {
     --black: #0D0907;
     --black-hover: rgba(13, 9, 7, 0.88);
-    --fade-black-hover: rgba(13, 9, 7, 0.72);
     --fade-black: #3D3936;
+    --fade-black-hover: rgba(13, 9, 7, 0.72);
     --grey: #86827B;
     --grey-hover: rgba(13, 9, 7, 0.58);
     --light-black: #CFCAC1;

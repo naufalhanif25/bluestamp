@@ -48,9 +48,9 @@ Figma: <a href="https://www.figma.com/design/Ee3HQEYQuH4UFZeZCLeqFJ/Bluestamp?no
         Install file-file vendor di directory project
         <pre><code>composer install</code></pre>
     </li>
-    <li>Jalankan web server Apache dan MySQL di XAMPP</li>
+    <li>Jalankan web server Apache dan Database (MySQL) di XAMPP/Laragon</li>
     <li>
-        Buat database dengan nama <code>bluestamp</code>
+        Buat database dengan nama <code>bluestamp</code> di XAMPP
         <ul>
             <li>Buka shell</li>
             <li>Masuk ke database
@@ -59,7 +59,12 @@ Figma: <a href="https://www.figma.com/design/Ee3HQEYQuH4UFZeZCLeqFJ/Bluestamp?no
             <li>Buat database 
                 <pre><code>create database bluestamp;</code></pre>
             </li>
-            <li>Keluar dari database</li>
+        </ul>
+        atau buat database dengan nama <code>bluestamp</code> di Laragon
+        <ul>
+            <li>Buka database</li>
+            <li>Buka session</li>
+            <li>Buat database</li>
         </ul>
     </li>
     <li>

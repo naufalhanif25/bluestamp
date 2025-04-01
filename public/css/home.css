@@ -50,10 +50,11 @@ header nav {
 .menu {
     display: none;
     fill: var(--fade-black);
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.12rem;
+    height: 1.12rem;
     overflow: visible;
     cursor: pointer;
+    transition: 120ms ease-out;
 }
 
 .menu:hover {
@@ -436,13 +437,13 @@ main {
         transform: translate(50vw, 3em);
     }
     20% {
-        transform: translate(12vw, 3em);
+        transform: translate(10rem, 3em);
     }
     40% {
-        transform: translate(12vw, 10em);
+        transform: translate(10rem, 10em);
     }
     60% {
-        transform: translate(12vw, 16em);
+        transform: translate(10rem, 16em);
     }
     80% {
         transform: translate(50vw, 16em);
