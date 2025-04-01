@@ -14,8 +14,15 @@ window.addEventListener("resize", () => {
 // Handle menu button clicks
 menuIcon.addEventListener("click", () => {
     navbar.classList.toggle("open");
-    menuIcon.style.fill = "var(--grey)";
-    menuIconHover.style.fill = "var(--grey-hover)";
+
+    if (navbar.classList.contains("open")) {
+        menuIcon.style.fill = "var(--grey)";
+        menuIconHover.style.fill = "var(--grey-hover)";
+    }
+    else {
+        menuIcon.style.fill = "var(--fade-black)";
+        menuIconHover.style.fill = "var(--fade-black-hover)";
+    }
 });
 
 // Handle clicks outside the navigation bar
