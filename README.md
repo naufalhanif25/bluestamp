@@ -69,7 +69,7 @@ Figma: <a href="https://www.figma.com/design/Ee3HQEYQuH4UFZeZCLeqFJ/Bluestamp?no
     </li>
     <li>
         Migrasi database. Jalankan perintah berikut di directory project
-        <pre><code>php asrtisan migrate</code></pre>
+        <pre><code>php artisan migrate</code></pre>
     </li>
     <li>
         Jalankan server lokal
