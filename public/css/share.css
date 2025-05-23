@@ -1,0 +1,372 @@
+/* Global style */
+.pipe {
+    content: '';
+    width: 0.08rem;
+    height: 1.4rem;
+    background-color: var(--light-black);
+}
+
+.fade-text {
+    color: var(--fade-black);
+}
+
+.liked {
+    fill: var(--red);
+    stroke: none;
+    stroke-width: 0;
+}
+
+.unliked {
+    fill: none;
+    stroke: var(--grey);
+}
+
+/* Header style */
+header {
+    width: 100vw;
+    height: 3.2em;
+    padding: 0rem 1.6rem;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid var(--light-black);
+    background: var(--white);
+    box-shadow: 0em 0.4em 0.4em 0em var(--light-shadow);
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+    gap: 2rem
+}
+
+.head-title {
+    height: 100%;
+    width: 8rem;
+}
+
+.head-title h1 {
+    cursor: pointer;
+}
+
+.acc-buttons {
+    height: 100%;
+    width: 8rem;
+    gap: 2rem;
+}
+
+/* Navigation bar style */
+.menu {
+    display: none;
+    fill: var(--fade-black);
+    width: 1.2rem;
+    height: 1.2rem;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.menu:hover {
+    fill: var(--fade-black-hover);
+}
+
+.navbar {
+    position: fixed;
+    z-index: 9;
+    transition: 320ms ease-out;
+}
+
+.open {
+    transform: translateY(4rem);
+}
+
+.navbar span {
+    padding: 0.4rem 1.8rem;
+    height: 2.6rem;
+    background-color: var(--white);
+    box-sizing: border-box;
+    border: 0.1em solid var(--light-black);
+    border-radius: 0.4em;
+    box-shadow: -0.4em 0.4em 0.4em 0em var(--light-shadow);
+}
+
+.navbar span nav {
+    height: 100%;
+    gap: 2rem;
+}
+
+#head-title {
+    display: flex;
+}
+
+#nav-buttons {
+    display: flex;
+}
+
+#menu {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0rem 1.2rem;
+    }
+
+    header nav {
+        gap: 12%;
+    }
+
+    .navbar span {
+        width: 60%;
+    }
+
+    .navbar span nav {
+        gap: 16%;
+    }
+
+    #head-title {
+        display: none;
+    }
+    
+    #nav-buttons {
+        display: none;
+    }
+    
+    #menu {
+        display: flex;
+    }
+
+    .acc-buttons {
+        gap: 12%;
+    }
+}
+
+.header-profile {
+    height: 100%;
+    width: 8rem;
+    gap: 0.8rem;
+}
+
+.header-profile svg {
+    fill: var(--black);
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+.link {
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--fade-black-hover);
+}
+
+/* Main style */
+main {
+    min-height: 100vh;
+}
+
+/* Tools section style */
+.tools {
+    position: fixed;
+    padding: 4.8rem 0rem 2.4rem 0rem;
+    box-sizing: border-box;
+    z-index: 1;
+    gap: 0.6rem;
+}
+
+.tools div {
+    padding: 0.4rem 0.6rem;
+    height: 2.8rem;
+    background-color: var(--white);
+    box-sizing: border-box;
+    border: 0.1em solid var(--light-black);
+    border-radius: 0.4em;
+    box-shadow: -0.4em 0.4em 0.4em 0em var(--light-shadow);
+    gap: 0.4rem;
+}
+
+.tools div .icon-button {
+    width: 2rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.tools div .icon-button:nth-child(2) {
+    font-style: italic;
+}
+
+.tools div .icon-button:hover {
+    background-color: var(--white-hover);
+    border-radius: 0.4em;
+}
+
+.tools div input {
+    width: 120%;
+    height: 120%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.tools div svg {
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+}
+
+.tools div svg path {
+    stroke: var(--black);
+    stroke-width: 0.14em;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.share-button {
+    padding: 0rem 0.8rem;
+    height: 2.7rem;
+    width: 2.7rem;
+    color: var(--white);
+    background-color: var(--black);
+    box-shadow: -0.4em 0.4em 0.4em 0em var(--light-shadow);
+    border-radius: 0.4em;
+    margin-left: 0.2rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.share-button:hover {
+    background-color: var(--black-hover);
+}
+
+.share-button svg {
+    position: absolute;
+    stroke: var(--white);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.share-button svg path {
+    stroke-width: 0.17rem;
+}
+
+.color-picker {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0rem 0.1rem 0rem 0.48rem;
+    overflow: hidden;
+    outline: 0.1em solid var(--black);
+    outline-offset: -0.08em;
+    border-radius: 100%;
+}
+
+/* Card section style */
+.card-out {
+    width: 20rem;
+    background-color: var(--light-yellow);
+    overflow: hidden;
+    border-radius: 1.2em;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    box-shadow: -0.6em 0.6em 0.8em 0em var(--fade-shadow);
+}
+
+.card-top {
+    width: 100%;
+    padding: 0.4rem 1.2em;
+    box-sizing: border-box;
+}
+
+.card-out p {
+    color: var(--fade-black);
+}
+
+.card-out input {
+    outline: none;
+    color: var(--black);
+}
+
+.card-out input::placeholder {
+    color: var(--grey);
+}
+
+@media (max-width: 600px) {
+    .card-out {
+        width: 72%;
+    }
+
+    .card-out input {
+        width: 100%;
+    }
+}
+
+.card-user {
+    gap: 0.6rem;
+}
+
+.profile-icon {
+    fill: none;
+}
+
+.profile-icon path {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: var(--black);
+}
+
+.card-in {
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 1.2em;
+    padding: 1.2em;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.card-in input {
+    outline: none;
+    color: var(--black);
+}
+
+.card-in input::placeholder {
+    color: var(--grey);
+}
+
+.card-in textarea {
+    outline: none;
+    resize: none;
+    height: 8rem;
+    color: var(--black);
+}
+
+.card-in textarea::placeholder {
+    color: var(--grey);
+}
+
+/* Footer style */
+footer {
+    width: 100vw;
+    padding: 2.4rem 1.6rem;
+    box-sizing: border-box;
+    border-top: 0.1em solid var(--light-black);
+    background: var(--white);
+}
+
+footer nav {
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 2.4rem 1.2rem;
+    }
+
+    footer nav {
+        gap: 12%;
+    }
+}
+
+footer p {
+    color: var(--grey);
+}

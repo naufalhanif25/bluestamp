@@ -1,0 +1,177 @@
+/* Header style */
+header {
+    width: 100vw;
+    height: 3.2em;
+    padding: 0rem 1.6rem;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid var(--light-black);
+    background: var(--white);
+    box-shadow: 0em 0.4em 0.4em 0em var(--light-shadow);
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+    gap: 2rem
+}
+
+.head-title {
+    height: 100%;
+    width: 8rem;
+}
+
+.head-title h1 {
+    cursor: pointer;
+}
+
+.head-title svg {
+    fill: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.head-title svg path {
+    stroke: var(--fade-black);
+    stroke-width: 0.24rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0rem 1.2rem;
+    }
+
+    header nav {
+        gap: 12%;
+    }
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--fade-black-hover);
+}
+
+/* Main style */
+main {
+    min-height: 100vh;
+}
+
+/* Profile box style */
+.container {
+    background-color: var(--white);
+    border: 0.1em solid var(--light-black);
+    border-radius: 1.2em;
+    padding: 1.8rem 2.4rem 2.4rem 2.4rem;
+    box-sizing: border-box;
+    box-shadow: -0.6em 0.6em 0.8em 0em var(--fade-shadow);
+    gap: 1.6rem;
+    width: 26rem;
+}
+
+@media (max-width: 600px) {
+    .container{
+        padding: 1.8rem 2rem 2.4rem 2rem;
+        width: 80%;
+    }
+}
+
+.profile-container {
+    background-color: var(--light-grey);
+    padding: 0.8rem 1rem;
+    border-radius: 0.6em;
+    gap: 0.8rem;
+}
+
+.profile-container svg {
+    fill: var(--black);
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.about-short h1 {
+    color: var(--black);
+}
+
+.about-short p {
+    color: var(--fade-black);
+}
+
+.about-long {
+    gap: 0.8rem;
+}
+
+.info-line {
+    border-bottom: 0.08em solid var(--light-black);
+    padding: 0.2rem 0;
+}
+
+.buttons-container {
+    gap: 0.8rem;
+}
+
+.buttons-container div {
+    gap: 0.8rem;
+}
+
+.solid-button {
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.42rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.solid-button:hover {
+    background-color: var(--black-hover);
+}
+
+.outline-button {
+    color: var(--red);
+    outline: 0.1em solid var(--light-red);
+    outline-offset: -0.1em;
+    padding: 0.42rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.outline-button:hover {
+    background-color: var(--light-red-hover);
+}
+
+/* Footer style */
+footer {
+    width: 100vw;
+    padding: 2.4rem 1.6rem;
+    box-sizing: border-box;
+    border-top: 0.1em solid var(--light-black);
+    background: var(--white);
+}
+
+footer nav {
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 2.4rem 1.2rem;
+    }
+
+    footer nav {
+        gap: 12%;
+    }
+}
+
+footer p {
+    color: var(--grey);
+}
