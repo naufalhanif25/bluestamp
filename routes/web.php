@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StampController;
 
 Route::get('/', function () {
     return view('home');
@@ -29,3 +30,8 @@ Route::get('/share', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+// Route untuk Stamp
+Route::post('/stamps', [StampController::class, 'store'])->name('stamps.store');
+Route::post('/stamps/{id}/love', [StampController::class, 'toggleLove'])->name('stamps.love');
+Route::get('/stamps', [StampController::class, 'index'])->name('stamps.index');

@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function stamps()
+    {
+        return $this->hasMany(Stamp::class);
+    }
+
+    public function lovedStamps()
+    {
+        return $this->belongsToMany(Stamp::class, 'loves')->withTimestamps();
+    }
 }
