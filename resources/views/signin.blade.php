@@ -34,13 +34,28 @@
         <section class="signin-box flex flex-col items-center justify-center">
             <h2 class="mynerve m-0 text-[20pt]">Sign in</h2>
 
+            {{-- Pesan sukses / error --}}
+            <!-- @if(session('success'))
+                <div class="bg-green-200 text-green-800 p-2 rounded mb-4 w-full text-center">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if($errors->any())
+                <div class="bg-red-200 text-red-800 p-2 rounded mb-4 w-full">
+                    @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif -->
+
             <!-- Input form -->
-            <form class="input-form w-full flex flex-col" action="" method="POST">
+            <form class="input-form w-full flex flex-col" id="signin-form" action="{{ route('signin') }}" method="POST">
                 @csrf
                 <div class="input-fields flex flex-col items-center justify-center">
-                    <input id="email" type="email" placeholder="Email" autocomplete="off" class="lato text-[10pt] w-full ">
+                    <input id="email" name="email" type="email" placeholder="Email" autocomplete="off" class="lato text-[10pt] w-full ">
                     <div class="password w-full flex flex-row items-center justify-center">
-                        <input id="password" type="password" placeholder="Password" autocomplete="off" class="lato text-[10pt] w-full">
+                        <input id="password" name="password" type="password" placeholder="Password" autocomplete="off" class="lato text-[10pt] w-full">
                         <svg id="hide" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onclick="togglePassword()">
                             <path d="M17.86,18.14l-.44.32-.48.29-.51.27c-.17.08-.35.17-.54.24l-.56.22-.6.18-.63.14-.67.11-.7.07L12,20l-.73,0-.7-.07L9.9,19.8l-.63-.14-.6-.18-.56-.22c-.19-.07-.37-.16-.54-.24l-.51-.27-.48-.29-.44-.32a4.46,4.46,0,0,1-.43-.33l-.39-.34L5,17.11l-.34-.36c-.11-.13-.22-.25-.32-.38L4,16l-.27-.37-.25-.38c-.08-.12-.15-.24-.22-.36l-.21-.36-.18-.34-.16-.33-.15-.32-.12-.29c0-.09-.08-.18-.11-.27l-.09-.24c0-.08-.06-.15-.08-.22l-.06-.18a1,1,0,0,1,0-.14.76.76,0,0,1,0-.11V12l0-.07a.76.76,0,0,1,0-.11l.06-.14.08-.18c0-.07.07-.14.1-.22L2.44,11c0-.09.09-.18.14-.27l.15-.29.18-.32C3,10,3,9.93,3.1,9.81l.22-.34c.07-.12.15-.24.23-.36l.26-.36c.08-.13.18-.25.27-.38L4.37,8l.32-.37L5,7.25l.35-.36.38-.36.4-.34"></path>
                             <path d="M10.14,4.2l.59-.11L11.36,4,12,4l.64,0,.63.07.59.11.58.14.55.18.53.22c.17.07.34.16.51.24l.49.27.46.29.44.32.42.33.4.34.38.36.35.36.34.38c.11.12.21.24.31.37s.2.25.3.37.19.25.27.38l.26.36c.08.12.16.24.23.36l.22.34c.06.12.13.23.19.33l.18.32.15.29c0,.09.1.18.14.27l.12.24c0,.08.07.15.1.22l.08.18.06.14a.76.76,0,0,1,0,.11L22,12v.11a.76.76,0,0,1,0,.11,1,1,0,0,1,0,.14l-.06.18c0,.07-.05.14-.08.22s-.06.16-.09.24-.07.18-.11.27l-.12.29-.15.32-.16.33-.18.34-.21.36"></path>
@@ -60,7 +75,12 @@
 
             <!-- Sign in buttons -->
             <div class="buttons-container w-full flex flex-col">
-                <button onclick="window.location.href='{{ route('home') }}'" type="submit" class="solid-button lato-bold text-[10pt] w-full">Sign in</button>
+                <!-- Submit form manually -->
+                <button type="button" onclick="document.getElementById('signin-form').submit()" class="solid-button lato-bold text-[10pt] w-full">
+                    Sign in
+                </button>
+
+                <!-- Google sign in -->
                 <button class="outline-button lato-bold text-[10pt] w-full flex flex-row items-center justify-center">
                     <svg viewBox="-3 0 262 262" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -75,6 +95,7 @@
                     Sign in with Google
                 </button>
             </div>
+
             <div class="w-full flex flex-row items-center justify-center gap-[0.4rem]">
                 <p class="paragraph lato m-0 text-[10pt]">Don't have an account yet?</p>
                 <a href="{{ route('signup') }}" class="lato-bold m-0 text-[10pt]">Sign up</a>
