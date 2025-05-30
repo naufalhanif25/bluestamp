@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'full_name',
+        'username',
         'email',
         'password',
     ];
@@ -44,5 +45,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function stamps()
+    {
+        return $this->hasMany(Stamp::class);
+    }
+
+    public function lovedStamps()
+    {
+        return $this->belongsToMany(Stamp::class, 'loves')->withTimestamps();
     }
 }

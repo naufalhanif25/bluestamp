@@ -187,6 +187,7 @@ main {
     width: 2rem;
     height: 100%;
     cursor: pointer;
+    background-color: var(--white);
 }
 
 .tools div .icon-button:nth-child(2) {
@@ -195,6 +196,11 @@ main {
 
 .tools div .icon-button:hover {
     background-color: var(--white-hover);
+    border-radius: 0.4em;
+}
+
+.button-active {
+    background-color: var(--light-grey) !important;
     border-radius: 0.4em;
 }
 

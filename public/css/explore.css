@@ -150,7 +150,7 @@ main {
 
 @media (max-width: 600px) {
     .search {
-        padding: 6rem 12% 3.2rem 12%;
+        padding: 6rem 6% 3.2rem 6%;
     }
 }
 
@@ -184,13 +184,14 @@ main {
 
 /* Results section style */
 .results {
-    padding: 0rem 12% 2.4rem 12%;
+    padding: 2rem 12% 2rem 12%;
     
 }
 
 @media (max-width: 600px) {
     .results {
-        padding: 0rem 8% 2.4rem 8%;
+        padding: 2rem 0% 2rem 0%;
+
     }
 }
 
@@ -219,4 +220,22 @@ footer nav {
 
 footer p {
     color: var(--grey);
+}
+
+.card-buttons {
+    width: 100%;
+    gap: 1.2rem;
+    transition: 160ms ease-out;
+}
+
+.card-buttons svg {
+    fill: none;
+    width: 1.8em;
+    height: 1.8em;
+}
+
+.card-buttons svg path {
+    stroke: var(--grey);
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }

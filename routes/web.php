@@ -2,21 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\StampController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LogoutController;
+
+// Halaman Utama
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/signin', function () {
-    return view('signin');
-})->name('signin');
+// Autentikasi (Login, Register, Logout)
+Route::get('/signin', [LoginController::class, 'showLoginForm'])->name('signin');
+Route::post('/signin', [LoginController::class, 'signin']);
+Route::get('/signup', [RegisterController::class, 'showRegisterForm'])->name('signup');
+Route::post('/signup', [RegisterController::class, 'signup']);
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
-
+// Halaman Lain
 Route::get('/profile', function () {
     return view('profile');
-})->name('profile');
+})->middleware('auth')->name('profile');
 
 Route::get('/explore', function () {
     return view('explore');
@@ -28,4 +34,10 @@ Route::get('/share', function () {
 
 Route::get('/about', function () {
     return view('about');
+
 })->name('about');
+
+// Stamp Controller
+Route::post('/stamps', [StampController::class, 'store'])->name('stamps.store');
+Route::post('/stamps/{id}/love', [StampController::class, 'toggleLove'])->name('stamps.love');
+Route::get('/stamps', [StampController::class, 'index'])->name('stamps.index');
