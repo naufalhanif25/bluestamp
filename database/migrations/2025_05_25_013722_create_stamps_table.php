@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('stamps', function (Blueprint $table) {
             $table->id();
+            $table->string('sender');
             $table->string('title');
             $table->string('story');
+            $table->string('color');
             $table->string('tag')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable(); // relasi ke users
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');

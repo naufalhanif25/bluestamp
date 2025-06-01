@@ -1,6 +1,5 @@
-const likeButton = document.getElementById("like-button");
-const likeButtonPath = document.querySelector("#like-button path");
+function like(id) {
+    const likeButtonPath = document.querySelector(`#like-button-${id} path`);
 
-likeButton.addEventListener("click", () => {
     likeButtonPath.classList.toggle("liked");
-})
+}

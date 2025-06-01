@@ -276,6 +276,30 @@ main {
     stroke-width: 0.17rem;
 }
 
+.share-button-not-signedin {
+    padding: 0rem 0.8rem;
+    height: 2.7rem;
+    width: 2.7rem;
+    color: var(--white);
+    background-color: var(--grey);
+    box-shadow: -0.4em 0.4em 0.4em 0em var(--light-shadow);
+    border-radius: 0.4em;
+    margin-left: 0.2rem;
+    overflow: hidden;
+}
+
+.share-button-not-signedin svg {
+    position: absolute;
+    stroke: var(--white);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.share-button-not-signedin svg path {
+    stroke-width: 0.17rem;
+    fill: var(--grey);
+}
+
 .color-picker {
     width: 1.2rem;
     height: 1.2rem;

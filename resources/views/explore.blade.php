@@ -61,9 +61,9 @@
 
         <!-- Search bar -->
         <section class="search lato text-[10pt] w-[100vw] flex flex-col items-center justify-center">
-            <form class="w-full flex gap-[0.8rem]" action="" method="POST">
+            <form class="w-full flex gap-[0.8rem]" action="{{ route('explore') }}" method="GET">
                 @csrf
-                <input id="query" class="flex grow" type="text" name="query" autocomplete="off" placeholder="Search by #tag">
+                <input id="keyword" class="flex grow" type="text" name="keyword" autocomplete="off" placeholder="Search by title or #tag">
                 <button class="lato-bold" type="submit">Search</button>
             </form>
         </section>
@@ -72,7 +72,9 @@
         <section class="results w-[100vw] grid lg:grid-cols-3 sm:grid-cols-2 gap-y-[32px]">
             @foreach ($stamps as $stamp)
                 <x-stamp
-                    sender="{{ $stamp->user->username ?? 'Anonymous' }}"
+                    id="{{ $stamp->id }}"
+                    color="{{ $stamp->color }}"
+                    sender="{{ $stamp->sender }}"
                     tags="{{ $stamp->tag }}"
                     title="{{ $stamp->title }}"
                     story="{{ $stamp->story }}"

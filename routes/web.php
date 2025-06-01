@@ -37,5 +37,5 @@ Route::get('/about', function () {
 
 // Stamp Controller
 Route::post('/stamps', [StampController::class, 'store'])->name('stamps.store');
-Route::post('/stamps/{id}/love', [StampController::class, 'toggleLove'])->name('stamps.love');
+Route::post('/explore/{id}/love', [StampController::class, 'toggleLove'])->name('stamps.love');
 Route::get('/stamps', [StampController::class, 'index'])->name('stamps.index');

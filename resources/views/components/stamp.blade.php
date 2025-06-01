@@ -1,7 +1,7 @@
-@props(['sender', 'tags', 'title', 'story'])
+@props(['id', 'color', 'sender', 'tags', 'title', 'story'])
 
 <section class="story px-2 flex flex-row items-center justify-center">
-    <div id="card-out" class="card-out flex flex-col items-center">
+    <div id="card-out" class="card-out flex flex-col items-center" style="background-color: {{ $color }};">
         <div class="card-top flex flex-row items-center justify-between self-stretch">
             <div class="card-user flex flex-row items-center">
                 <svg class="w-[1.8rem] h-[1.8rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
@@ -19,9 +19,19 @@
                 <p class="lato fade-text w-full m-0 text-[10pt] text-justify">{{ $story }}</p>
             </div>
             <div class="card-buttons w-full flex items-center">
-                <svg id="like-button" xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 26 26">
-                    <path class="stroke-[0.1em]" d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
-                </svg>
+                @if (Route::has('signin'))
+                    @auth
+                        <button>
+                            <svg id="like-button-{{ $id }}" onclick="like({{ $id }})" xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 26 26">
+                                <path class="stroke-[0.1em]" d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+                            </svg>
+                        </button>
+                    @else
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 26 26">
+                            <path class="stroke-[0.1em]" d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+                        </svg>
+                    @endauth
+                @endif
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 0 40 40">
                     <path class="stroke-[0.15em]" d="M13.5495 29.5754C13.5495 28.9126 13.0123 28.3754 12.3495 28.3754H12.1825C10.5817 28.3754 9.05502 27.7624 7.93623 26.6847C6.81896 25.6084 6.2 24.1585 6.2 22.6566V11.9187C6.2 10.4168 6.81896 8.96693 7.93623 7.8907C9.05502 6.813 10.5817 6.2 12.1825 6.2H29.8175C31.4183 6.2 32.945 6.813 34.0638 7.8907C35.181 8.96693 35.8 10.4168 35.8 11.9187V22.6566C35.8 24.1585 35.181 25.6084 34.0638 26.6847C32.945 27.7624 31.4183 28.3754 29.8175 28.3754H21.9723C21.679 28.3754 21.3958 28.4828 21.1763 28.6774L13.5495 35.4389V29.5754ZM13.5495 36.1355V36.1343V36.1355Z"/>
                 </svg>

@@ -10,8 +10,10 @@ class Stamp extends Model
     use HasFactory;
 
     protected $fillable = [
+        'sender',
         'title',
         'story',
+        'color',
         'tag',
         'user_id'
     ];

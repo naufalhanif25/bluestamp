@@ -65,12 +65,23 @@
                 everyone has the right to be heard.
             </h1>
             <div class="inline-buttons flex">
-                <button onclick="window.location.href='{{ route('share') }}'" class="solid-button flex items-center lato-bold text-[10pt]">
-                    Share your story
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                        <path d="M9 16.5H17M12.5556 2.06071C12.9092 1.70169 13.3888 1.5 13.8889 1.5C14.389 1.5 14.8686 1.70169 15.2222 2.06071C15.5758 2.41973 15.7745 2.90667 15.7745 3.4144C15.7745 3.92213 15.5758 4.40906 15.2222 4.76808L4.55556 15.5975L1 16.5L1.88889 12.8902L12.5556 2.06071Z"/>
-                    </svg>
-                </button>
+                @if (Route::has('signin'))
+                    @auth
+                        <button onclick="window.location.href='{{ route('share') }}'" class="solid-button flex items-center lato-bold text-[10pt]">
+                            Share your story
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                <path d="M9 16.5H17M12.5556 2.06071C12.9092 1.70169 13.3888 1.5 13.8889 1.5C14.389 1.5 14.8686 1.70169 15.2222 2.06071C15.5758 2.41973 15.7745 2.90667 15.7745 3.4144C15.7745 3.92213 15.5758 4.40906 15.2222 4.76808L4.55556 15.5975L1 16.5L1.88889 12.8902L12.5556 2.06071Z"/>
+                            </svg>
+                        </button>
+                    @else
+                        <button onclick="window.location.href='{{ route('signin') }}'" class="solid-button flex items-center lato-bold text-[10pt]">
+                            Share your story
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                <path d="M9 16.5H17M12.5556 2.06071C12.9092 1.70169 13.3888 1.5 13.8889 1.5C14.389 1.5 14.8686 1.70169 15.2222 2.06071C15.5758 2.41973 15.7745 2.90667 15.7745 3.4144C15.7745 3.92213 15.5758 4.40906 15.2222 4.76808L4.55556 15.5975L1 16.5L1.88889 12.8902L12.5556 2.06071Z"/>
+                            </svg>
+                        </button>
+                    @endauth
+                @endif
                 <button onclick="window.location.href='{{ route('explore') }}'" class="outline-button flex items-center lato-bold text-[10pt]">
                     Explore the stories
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -136,7 +147,8 @@
                         Reply and support
                     </h1>
                     <p class="lato fade-text m-0 text-[10pt] text-justify">
-                        Reply and support other people&apos;s stories to keep them motivated. Your support will be very valuable for them, trust me!                    </p>
+                        Reply and support other people&apos;s stories to keep them motivated. Your support will be very valuable for them, trust me!                    
+                    </p>
                 </div>
             </div>
             <div class="comment-section section-right flex flex-col gap-[0.8rem]">
