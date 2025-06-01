@@ -24,9 +24,7 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware('auth')->name('profile');
 
-Route::get('/explore', function () {
-    return view('explore');
-})->name('explore');
+Route::get('/explore', [StampController::class, 'explore'])->name('explore');
 
 Route::get('/share', function () {
     return view('share');

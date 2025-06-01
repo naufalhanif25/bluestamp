@@ -69,13 +69,15 @@
         </section>
 
         <!-- Results section -->
-        <section class="results w-[100vw] grid lg:grid-cols-3 sm:grid-cols-2  gap-y-[32px]">
-            <x-stamp
-                sender="Naufal"
-                tags="#halo"
-                title="Halo"
-                story="Hello world"
-            ></x-stamp>
+        <section class="results w-[100vw] grid lg:grid-cols-3 sm:grid-cols-2 gap-y-[32px]">
+            @foreach ($stamps as $stamp)
+                <x-stamp
+                    sender="{{ $stamp->user->username ?? 'Anonymous' }}"
+                    tags="{{ $stamp->tag }}"
+                    title="{{ $stamp->title }}"
+                    story="{{ $stamp->story }}"
+                />
+            @endforeach
         </section>
     </main>
 

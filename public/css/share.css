@@ -1,4 +1,23 @@
 /* Global style */
+
+:root {
+  --grey: #666666;
+  --grey-hover: #999999;
+  --fade-black: #333333;
+  --fade-black-hover: #555555;
+}
+
+/* Styling ikon menu biasa */
+#menu {
+  fill: var(--fade-black);
+  transition: fill 0.3s ease;
+}
+
+/* Efek hover */
+#menu:hover {
+  fill: var(--fade-black-hover);
+}
+
 .pipe {
     content: '';
     width: 0.08rem;

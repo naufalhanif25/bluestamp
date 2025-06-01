@@ -32,6 +32,12 @@ class StampController extends Controller
         return response()->json(['message' => 'Stamp created successfully']);
     }
 
+    public function explore()
+    {
+        $stamps = Stamp::with('user')->latest()->get(); // ambil data stamp + relasi user
+        return view('explore', compact('stamps')); // pastikan 'explore.blade.php' ada
+    }
+
     public function toggleLove($id)
     {
         $user = auth()->user();
