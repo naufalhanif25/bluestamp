@@ -97,7 +97,7 @@
                                     <svg class="w-[1.8rem] h-[1.8rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
                                         <path d="M18 3C19.9698 2.99999 21.9204 3.38797 23.7402 4.14179C25.5601 4.8956 27.2137 6.00049 28.6066 7.39337C29.9995 8.78624 31.1044 10.4398 31.8582 12.2597C32.612 14.0796 33 16.0301 33 18C33 26.2843 26.2843 33 18 33C9.71576 33 3 26.2843 3 18C3 9.71576 9.71576 3 18 3ZM19.5 19.5H16.5C12.7864 19.5 9.59827 21.7491 8.22317 24.9597C10.3989 28.0106 13.9671 30 18 30C22.0328 30 25.601 28.0106 27.7769 24.9594C26.4018 21.7491 23.2136 19.5 19.5 19.5ZM18 7.5C15.5147 7.5 13.5 9.51474 13.5 12C13.5 14.4853 15.5147 16.5 18 16.5C20.4852 16.5 22.5 14.4853 22.5 12C22.5 9.51474 20.4853 7.5 18 7.5Z"/>
                                     </svg>
-                                    <input type="text" class="lato m-0 text-[10pt] grow pointer-events-none" id="sender" name="sender" value="{{ Auth::check() ? Auth::user()->username : 'Anonymous' }}">
+                                    <input type="text" class="lato m-0 text-[10pt] grow pointer-events-none" id="sender" name="sender" value="{{ Auth::check() ? Auth::user()->full_name : 'Anonymous' }}">
                                 </div>
                                 @csrf
                                 <input id="tag" class="lato m-0 text-[10pt] w-full text-right overflow-hidden" type="text" name="tag" autocomplete="off" placeholder="#tag">
